@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <link rel="stylesheet" href="style.css">
+   <script>
+    function validateForm(){
+      var fname=true;
+      var f=/^[A-Z]/;
+      var lname=true;
+      var l=/^[A-Z]/;
+      var password=true;
+      var email=true;
+      var tel=true;
+      var gender=true;
+      var degree=true;
+      var hobby=true;
+      var e=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      var T= /^[0-9][0-6]\d{10}$/;
+      var p= /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+
+          
+     if(document.getElementById('fname').value=="")
+     {
+      fname=false;
+      document.getElementById('fn').innerHTML="please enter your first name";
+      document.getElementById('fn').style.color="red";
+      document.getElementById('fname').style.borderColor="red";
+     }
+     else if(f.test(document.getElementById('fname').value)==false){
+      document.getElementById('fn').innerHTML="first letter must be capital";
+      document.getElementById('fn').style.color='red';
+      document.getElementById('fname').style.borderColor='red';
+     }
+
+     else{
+      fname=true;
+      document.getElementById('fname').style.borderColor='green';
+      document.getElementById('fn').innerHTML="";
+     }
+
+     if(document.getElementById('lname').value=="")
+     {
+      flame=false;
+      document.getElementById('ln').innerHTML="please enter your last name";
+      document.getElementById('ln').style.color='red';
+      document.getElementById('lname').style.borderColor='red';
+     }
+     else if(l.test(document.getElementById('lname').value)==false){
+      document.getElementById('ln').innerHTML="first letter must be capital";
+      document.getElementById('ln').style.color='red';
+      document.getElementById('lname').style.borderColor='red';
+     }
+     else{
+      flame=true;
+      document.getElementById('lname').style.borderColor='green';
+      document.getElementById('ln').innerHTML="";
+     }
+      
+     if(document.getElementById('password').value=="")
+     {
+      password=false;
+      document.getElementById('pass').innerHTML="please enter your password";
+      document.getElementById('pass').style.color='red';
+      document.getElementById('password').style.borderColor='red';
+     }
+     else if(p.test(document.getElementById('password').value)==false){
+      document.getElementById('pass').innerHTML="please enter valid password";
+      document.getElementById('pass').style.color='red';
+      document.getElementById('password').style.borderColor='red';
+     }
+
+     else{
+      password=true;
+      document.getElementById('password').style.borderColor='green';
+      document.getElementById('pass').innerHTML="";
+     }
+
+     if(document.getElementById('email').value=="")
+     {
+      email=false;
+      document.getElementById('em').innerHTML="please enter your e-mail";
+      document.getElementById('em').style.color='red';
+      document.getElementById('email').style.borderColor='red';
+     }
+     else if(e.test(document.getElementById('email').value)==false){
+      document.getElementById('em').innerHTML="please enter valid e-mail";
+      document.getElementById('em').style.color='red';
+      document.getElementById('email').style.borderColor='red';
+     }
+
+     else{
+      email=true;
+      document.getElementById('email').style.borderColor='green';
+      document.getElementById('em').innerHTML="";
+     }
+
+     if(document.getElementById('tel').value=="")
+     {
+      tel=false;
+      document.getElementById('te').innerHTML="please enter your ph-number";
+      document.getElementById('te').style.color='red';
+      document.getElementById('tel').style.borderColor='red';
+     }
+     else if(T.test(document.getElementById('tel').value)==false){
+      document.getElementById('te').innerHTML="please enter valid ph-number";
+      document.getElementById('te').style.color='red';
+      document.getElementById('tel').style.borderColor='red';
+     }
+     else{
+      tel=true;
+      document.getElementById('tel').style.borderColor='green';
+      document.getElementById('te').innerHTML="";
+     } 
+      
+     if(document.getElementById('gendermale').checked!=true && document.getElementById('genderfemale').checked!=true && document.getElementById('gendertransgender').checked!=true)
+     {
+      gender=false;
+      document.getElementById('gen').innerHTML="please enter your gender";
+      document.getElementById('gen').style.color='red';
+     }
+     else{
+      gender=true;
+      document.getElementById('gen').innerHTML='';
+     }
+      
+    //  if(document.getElementById('MenuButton').value =="select")
+    //  {
+    //   degree=false;
+    //   document.getElementById('MenuButton').innerHTML="please enter your degree";
+    //   document.getElementById('MenuButton').style.color='red';
+    //  }
+    //  else{
+    //   degree=true;
+    //   document.getElementById('MenuButton').innerHTML='';
+    //  }
+
+     if(document.getElementById('Playing').checked!=true && document.getElementById('Reading').checked!=true && document.getElementById('Cooking').checked!=true)
+     {
+      hobby=false;
+      document.getElementById('check').innerHTML="please enter your hobby";
+      document.getElementById('check').style.color='red';
+     }
+     else{
+      hobby=true;
+      document.getElementById('check').innerHTML='';
+     }
+
+     if(fname==false || lname==false || password==false || email==false || tel==false || gender==false || degree==false || hobby==false)
+     {
+      return false
+     }
+     else{
+      return true
+     }
+    }
+</script>
+  </head>
+<body class="body">
+  <form name="myForm" onsubmit="return validateForm()" method="post">
+  <div class="container">
+     <div class="h2">
+      <h1>Form Validation</h1>
+    </div> <br>
+    <div class="form-group">
+      <label for="fname">FNAME :</label><br>
+      <input type="text" id="fname" name="fname" placeholder=" Fname">
+      <p id="fn"></p>
+    </div><br>
+    <div class="form-group">
+      <label for="lname">LNAME :</label><br>
+      <input type="text" id="lname" name="lname" placeholder=" Lname">
+      <p id="ln"></p>
+    </div><br>
+    <div class="form-group">
+      <label>PASSWORD :</label><br>
+       <input type="password" id="password"  placeholder=" password"><br><br>
+       <p id="first">* Atleast oneuppercase,onechar,onenumber</p>
+       <p id="pass"></p>
+    </div><br>
+    <div class="form-group">
+      <label for="email">E-MAIL :</label><br>
+      <input type="text" id="email" name="email" placeholder=" email1@gmail.com" >
+      <p id="em"></p>
+    </div><br>
+    <div class="form-group">
+     <label for="tel"> MOBILE :</label><br>
+     <input type="number" id="tel" name="tel" placeholder=" +91-123-456-8910" >
+     <p id="te"></p>
+    </div><br>
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+       Degree
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">BSC</a></li>
+        <li><a class="dropdown-item" href="#">BBA</a></li>
+        <li><a class="dropdown-item" href="#">B.COM</a></li>
+      </ul>
+    </div><br>
+    <div class="form-gender">
+      <label for="gender"> GENDER :</label>
+      <input type="radio" name="gender" id="gendermale">Male
+      <input type="radio" name="gender" id="genderfemale">Female
+      <input type="radio" name="gender" id="gendertransgender">Trangender
+      <p id="gen"></p>
+    </div>
+    <div class="form-check">
+        <label for="hobby">HOBBY :</label>
+        <input type="checkbox" name="Playing" id="Playing">Playing
+        <input type="checkbox" name="Reading" id="Reading">Reading
+        <input type="checkbox" name="Cooking" id="Cooking">Cooking
+        <p id="check"></p>
+      </div>
+      <button class="submit">Submit</button>
+   </div>
+</form>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

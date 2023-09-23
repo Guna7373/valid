@@ -1,0 +1,64 @@
+.body{
+    background-image: url(./img/antique-cafe-bg-01.jpg);
+    background-size: cover;
+}.container{
+    background-color:wheat;
+    border-style:solid;
+    opacity: 0.9;
+    margin-left: 32%;
+    width:37%;
+    padding:5px;
+    border-radius:5px;
+   
+}
+.h2{
+    text-align: center;
+    color: brown;
+    opacity: 1;
+}
+.form-group,.form-gender,.form-degree,.form-check,.dropdown{
+    margin-left: 60px;
+    margin-top: 7px;
+    /* color:black; */
+}
+#first{
+    margin-left: 18px;
+    color: green;
+}
+.form-check{
+    margin-left: 35px;
+}
+.form-degree,.form-check{
+    margin-top:20px;
+}
+.form-group input{
+    width:80%;
+    padding:5px;
+    border-radius: 10px;
+    background-color:chocolate;
+}
+.form-group ::placeholder{
+    color:black;
+}
+.form-group ::placeholder focus{
+    color:black;
+}
+.form-group input:focus{
+    background-color:darkkhaki;
+}
+.submit{
+    border-radius: 10px;
+    width:30%;
+    padding:20px;
+    margin-top: 20px;
+    margin-left: 30%;
+    font-size: 18px;
+    background-color:black;
+    color:white;
+    border-color:azure;
+}
+.submit:hover{
+    background-color:green;
+}
+
+
